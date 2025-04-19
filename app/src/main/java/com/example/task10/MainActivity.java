@@ -1,6 +1,8 @@
 package com.example.task10;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Switch;
 import android.widget.ToggleButton;
 
@@ -15,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     ToggleButton tb;
     Switch sw;
+    Button click;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +26,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         tb = (ToggleButton) findViewById(R.id.tb);
         sw = (Switch) findViewById(R.id.sw);
+        click = (Button) findViewById(R.id.click);
     }
+
+    public void check (View view){
 
 }
 }
