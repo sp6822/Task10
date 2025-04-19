@@ -8,6 +8,7 @@ import android.widget.ToggleButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     Switch sw;
     Button click;
 
+    ConstraintLayout screen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,9 +29,33 @@ public class MainActivity extends AppCompatActivity {
         tb = (ToggleButton) findViewById(R.id.tb);
         sw = (Switch) findViewById(R.id.sw);
         click = (Button) findViewById(R.id.click);
+        screen = (ConstraintLayout)findViewById(R.id.main);
     }
 
     public void check (View view){
 
-}
+    }
+
+    public void check_image(View view)
+    {
+        if (!sw.isChecked() && !tb.isChecked())
+        {
+            screen.setBackgroundResource(R.drawable.image1);
+        }
+        else if (!sw.isChecked() && tb.isChecked())
+        {
+            screen.setBackgroundResource(R.drawable.image2);
+        }
+        else if (sw.isChecked() && !tb.isChecked())
+        {
+            screen.setBackgroundResource(R.drawable.image3);
+        }
+        else
+        {
+            screen.setBackgroundResource(R.drawable.image4);
+
+        }
+
+    }
+
 }
