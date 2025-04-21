@@ -14,17 +14,18 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+{
 
     ToggleButton tb;
     Switch sw;
     Button click;
-
     ConstraintLayout screen;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         tb = (ToggleButton) findViewById(R.id.tb);
         sw = (Switch) findViewById(R.id.sw);
@@ -32,11 +33,7 @@ public class MainActivity extends AppCompatActivity {
         screen = (ConstraintLayout)findViewById(R.id.main);
     }
 
-    public void check (View view){
-
-    }
-
-    public void check_image(View view)
+    public void check (View view)
     {
         if (!sw.isChecked() && !tb.isChecked())
         {
@@ -50,12 +47,9 @@ public class MainActivity extends AppCompatActivity {
         {
             screen.setBackgroundResource(R.drawable.image3);
         }
-        else
+        else if (sw.isChecked() && tb.isChecked())
         {
             screen.setBackgroundResource(R.drawable.image4);
-
         }
-
     }
-
 }
